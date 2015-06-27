@@ -13,7 +13,7 @@
 #include <cstring>
 
 
-Registro::Registro(char comando[100], char conteudo[150000]) {
+Registro::Registro(char comando[100], char conteudo[200000]) {
 	strcpy(this->comando, comando);
 	strcpy(this->conteudo, conteudo);
 }

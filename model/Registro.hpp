@@ -12,11 +12,11 @@ class Registro {
 
 private:
 	char comando[100];
-	char conteudo[150000];
+	char conteudo[200000];
 
 public:
 
-	Registro(char comando[100], char conteudo[150000]);
+	Registro(char comando[100], char conteudo[200000]);
 
 	virtual ~Registro();
 
@@ -31,11 +31,6 @@ public:
 	bool operator<(const Registro& rhs) const {
 			return comando < rhs.comando;
 		}
-
-	bool operator>(const Registro& rhs) const {
-				return comando > rhs.comando;
-			}
-
 };
 
 #endif /* SEARCH_MANPAGES_UNIX_MODEL_REGISTRO_HPP_ */

@@ -21,6 +21,7 @@ Leitor::~Leitor() {
 	// TODO Auto-generated destructor stub
 }
 
+
 Registro Leitor::lerArquivo() {
 
 		ifstream archive (this->arquivo.c_str());
@@ -28,10 +29,10 @@ Registro Leitor::lerArquivo() {
 		if(archive.is_open()){
 
 			string nome_comando  = this->arquivo.substr((this->arquivo.find_last_of("/") + 1), (this->arquivo).find_last_of(".") - (this->arquivo.find_last_of("/") + 1));
-			char comando[80];
+			char comando[100];
 			strcpy(comando, nome_comando.c_str());
 
-			char conteudo[150000];
+			char conteudo[200000];
 			std::stringstream buffer;
 			buffer<<archive.rdbuf();
 			strcpy(conteudo, buffer.str().c_str());
@@ -42,13 +43,8 @@ Registro Leitor::lerArquivo() {
 			return r;
 
 		} else {
-			cout << "Não está abrindo o arquivo " << endl;
+			throw "Não está abrindo o arquivo ";
 		}
-
-
-
-
 }
-
 
 #endif /* SEARCH_MANPAGES_UNIX_MODEL_LEITOR_CPP_ */

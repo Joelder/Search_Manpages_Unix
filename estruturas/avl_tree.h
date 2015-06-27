@@ -392,14 +392,19 @@ public:
 		if (_root != nullptr) {
 			nos.push_back(_root);
 			
+			int i = 0;
 			for (auto no : nos) {
+				cout << "Entrou no for: "<< i << endl;
 				if (no->esquerda != nullptr) {
 					nos.push_back(no->esquerda);
+					cout << "Slavou da esquerda" << endl;
 				}
 				if (no->direita != nullptr) {
 					nos.push_back(no->direita);
+					cout << "Slavou da direita" << endl;
 				}
 				dados.push_back(no->_dado);
+				i++;
 			}
 		}
 		return dados;
