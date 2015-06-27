@@ -22,29 +22,35 @@ Indexador::~Indexador() {
 
 void Indexador::indexar() {
 
-	Leitor *read = new Leitor(argv[1]);
-	Registro r = read->lerArquivo();
-
-	NoAVL<Registro> *chavePrimaria = new NoAVL<Registro>(r);
 
 
-	cout << "comando: " << r.getComando() << endl;
-	cout << "conteudo: " << r.getConteudo() << endl;
 
 
-	Leitor *read2 = new Leitor(argv[2]);
-	Registro r2 = read2->lerArquivo();
+	for (int i = 1; i < argc; i++) {
+		cout << "Indexando chave" << i << endl;
+	    // Lê o arquivo manpage atual.
+	    Leitor *read = new Leitor(argv[i]);
+	    Registro mr = read->lerArquivo();
 
-	chavePrimaria->inserir(r2,chavePrimaria);
+	    // Adiciona na lista de índices primários
+	    chavePrimaria.insere(mr);
 
-	cout << "comando: " << r2.getComando() << endl;
-	cout << "conteudo: " << r2.getConteudo() << endl;
 
+	}
 
 	/*
-	for (int i = 2; i < this->argc; i++) {
-		cout << "Indexando chave" << i << endl;
-	}
+	NoAVL<Registro> *p = chavePrimaria->getDireita();
+	Registro* pesquisa = p->getDado();
+	cout << "comando direita: " << pesquisa->getComando() << endl;
+	cout << "conteudo direita: " << pesquisa->getConteudo() << endl;
+
+
+	NoAVL<Registro> *p2 = chavePrimaria->getEsquerda();
+	Registro* pesquisa2 = p2->getDado();
+	cout << "comando esquerda: " << pesquisa2->getComando() << endl;
+	cout << "conteudo esquerda: " << pesquisa2->getConteudo() << endl;
 */
+
+
 }
 

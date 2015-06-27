@@ -20,13 +20,14 @@ class NoAVL  {
     T* dado;  //!< atributo que representa o valor do nó
     NoAVL<T>* esquerda;  //!< atributo que aponta para o nó da esquerda
     NoAVL<T>* direita;  //!< atributo que aponta para o nó da direita
-    std::vector<NoAVL<T>* > elementos;  //!< Elementos acessados durante
-                                        // o percurso realizado
+
 
 /*!
 * Construtor de um Nó AVL
 */
  public:
+    std::vector<NoAVL<T>* > elementos;
+
     explicit NoAVL(const T& dado) {
         this->altura = 0;
         this->dado = new T(dado);

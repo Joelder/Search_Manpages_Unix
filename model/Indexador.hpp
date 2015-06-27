@@ -8,11 +8,11 @@
 #ifndef SEARCH_MANPAGES_UNIX_MODEL_INDEXADOR_HPP_
 #define SEARCH_MANPAGES_UNIX_MODEL_INDEXADOR_HPP_
 #include "Registro.cpp"
-#include "../estruturas/NoAVL.hpp"
+#include "../estruturas/avl_tree.h"
 
 class Indexador {
 private:
-	//NoAVL<Registro> chavePrimaria;
+	avl_tree<Registro> chavePrimaria;
 
 	int argc;
 
